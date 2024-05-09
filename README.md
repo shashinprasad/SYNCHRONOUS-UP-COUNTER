@@ -10,9 +10,7 @@ Quartus prime
 
 **THEORY**
 
-
 **4 bit synchronous UP Counter**
-
 
 If we enable each J-K flip-flop to toggle based on whether or not all preceding flip-flop outputs (Q) are “high,” we can obtain the same counting sequence as the asynchronous circuit without the ripple effect, since each flip-flop in this circuit will be clocked at exactly the same time:
 
@@ -28,8 +26,6 @@ Since the first (LSB) flip-flop needs to toggle at every clock pulse, its J and 
 The next flip-flop need only “recognize” that the first flip-flop’s Q output is high to be made ready to toggle, so no AND gate is needed.
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
-
-
 **Procedure**
 
 1.Initialize the shift register to a known state (e.g., all zeros).
@@ -42,18 +38,13 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 5.Repeat steps 2-4 for each bit you want to input and shift.
 
-
-
-
 **PROGRAM**
-
-
-Developed by: shashin prasad s
-
-RegisterNumber:212222230144
-
-
 ```
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+Developed by: Shashin prasad S
+RegisterNumber: 212222230144
+*/
+
 module ex11(out,clk,rstn);
 input clk,rstn;
 output reg [3:0]out;
@@ -66,29 +57,15 @@ begin
 end
 endmodule
 ```
-
-
 **RTL LOGIC UP COUNTER**
-
-
-![325875062-66fc43d1-92e2-44d8-aa13-34c31b4f100a](https://github.com/shashinprasad/SYNCHRONOUS-UP-COUNTER/assets/129143499/7982bc82-76f8-4aa6-a545-5d9e7600c0dc)
-
-
+![Screenshot 2024-05-06 094211](https://github.com/Aadithya2201/SYNCHRONOUS-UP-COUNTER/assets/145917810/f4869c52-7a0e-4c94-a4d6-04b01dfcd809)
 
 **TIMING DIAGRAM FOR IP COUNTER**
-
-![325875075-4e8c3b6a-4598-4ed3-b666-6ded1c19437a](https://github.com/shashinprasad/SYNCHRONOUS-UP-COUNTER/assets/129143499/459ffda9-3bfb-4f27-b891-445a6a841fe9)
-
-
-
+![Screenshot 2024-05-06 094202](https://github.com/Aadithya2201/SYNCHRONOUS-UP-COUNTER/assets/145917810/1abcd775-c2dc-4648-9ee8-885e2de5e8e7)
 
 **TRUTH TABLE**
-![325875099-865fb0d4-c01e-48fa-9753-c277cc1e6f6a](https://github.com/shashinprasad/SYNCHRONOUS-UP-COUNTER/assets/129143499/1badade1-0920-4031-8c1c-9bffc3c4db56)
-
-
+![Screenshot 2024-05-06 094149](https://github.com/Aadithya2201/SYNCHRONOUS-UP-COUNTER/assets/145917810/eebac85a-4eac-497d-9860-e143a0c978fc)
 
 **RESULTS**
 
-
-
-Hence a 4 bit synchronous up counter is implemented correctly
+Hence a 4 bit synchronous up counter is implemented correctly.
